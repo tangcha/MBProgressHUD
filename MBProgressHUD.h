@@ -123,6 +123,8 @@ typedef enum {
 	UIView *customView;
 	
 	CGAffineTransform rotationTransform;
+    
+    CGFloat radius;
 }
 
 /**
@@ -312,6 +314,8 @@ typedef enum {
  * Force the HUD dimensions to be equal if possible. 
  */
 @property (assign, getter = isSquare) BOOL square;
+
+@property (assign) CGFloat radius;
 
 /** 
  * Display the HUD. You need to make sure that the main thread completes its run loop soon after this method call so

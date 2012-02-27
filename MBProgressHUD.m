@@ -75,6 +75,8 @@
 
 @synthesize showStarted;
 
+@synthesize radius;
+
 - (void)setMode:(MBProgressHUDMode)newMode {
     // Dont change mode if it wasn't actually changed to prevent flickering
     if (mode && (mode == newMode)) {
@@ -296,6 +298,7 @@
 		self.removeFromSuperViewOnHide = NO;
 		self.minSize = CGSizeZero;
 		self.square = NO;
+        self.radius = 10.0f;
 		
 		self.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
 		
@@ -663,7 +666,6 @@
     CGRect boxRect = CGRectMake(roundf((allRect.size.width - self.width) / 2) + self.xOffset,
                                 roundf((allRect.size.height - self.height) / 2) + self.yOffset, self.width, self.height);
 	// Corner radius
-	float radius = 10.0f;
 	
     CGContextBeginPath(context);
     CGContextSetGrayFillColor(context, 0.0f, self.opacity);
