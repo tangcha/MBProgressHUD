@@ -76,6 +76,7 @@
 @synthesize showStarted;
 
 @synthesize radius;
+@synthesize additionalTextPadding;
 
 - (void)setMode:(MBProgressHUDMode)newMode {
     // Dont change mode if it wasn't actually changed to prevent flickering
@@ -299,6 +300,7 @@
 		self.minSize = CGSizeZero;
 		self.square = NO;
         self.radius = 10.0f;
+        self.additionalTextPadding = 0.0f;
 		
 		self.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
 		
@@ -388,7 +390,7 @@
 		
         // Set the label position and dimensions
         CGRect lFrame = CGRectMake(floorf((frame.size.width - lWidth) / 2) + xOffset,
-                                   floorf(indFrame.origin.y + indFrame.size.height + PADDING),
+                                   floorf(indFrame.origin.y + indFrame.size.height + PADDING + additionalTextPadding),
                                    lWidth, lHeight);
         label.frame = lFrame;
 		

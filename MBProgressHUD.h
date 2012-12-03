@@ -317,6 +317,8 @@ typedef enum {
 
 @property (assign) CGFloat radius;
 
+@property (assign) CGFloat additionalTextPadding;
+
 /** 
  * Display the HUD. You need to make sure that the main thread completes its run loop soon after this method call so
  * the user interface can be updated. Call this method when your task is already set-up to be executed in a new thread
